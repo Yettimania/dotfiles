@@ -39,7 +39,7 @@ padding-right = 2
 module-margin-left = 3
 module-margin-right = 0
 
-font-0 = "Roboto:pixelsize=10;1"
+font-0 = "'System San Francisco Display Regular':pixelsize=10;1"
 font-1 = unifont:fontformat=truetype:size=11:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=9;1"
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
@@ -50,7 +50,7 @@ font-6 = Hack:pixelsize=9;1
 modules-left = i3
 modules-center = xwindow
 ;weather update installed
-modules-right = wlan volume battery date powermenu
+modules-right = filesystem cpu memory wlan volume date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -184,7 +184,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "cpu"
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
 
@@ -193,7 +193,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "ram"
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
 
@@ -243,35 +243,6 @@ label-muted-underline = ${colors.primary}
 mapping = false
 format = <label>
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 99
-
-format-charging-underline = ${colors.primary}
-format-discharging-underline = ${colors.primary}
-
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -304,5 +275,21 @@ screenchange-reload = true
 [global/wm]
 margin-top = 0
 margin-bottom = 0
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+format-mounted-prefix = 
+format-mounted-prefix-foreground = ${colors.foreground-alt}
+format-mounted-underline = ${colors.primary}
+label-mounted = %percentage_used%%
+#label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+
 
 ; vim:ft=dosini
