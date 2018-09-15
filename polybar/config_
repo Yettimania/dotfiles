@@ -9,18 +9,18 @@
 
 [colors]
 ;background = #333
-background = #00000000
-background-alt = #444
-foreground = #fee153
+background = ${xrdb:color0}
+background-alt = ${xrdb:color7}
+foreground = ${xrdb:color15}
 foreground-alt = #AAA
-primary = #FE2A76
+primary = ${xrdb:color12}
 secondary = #FEE153
-alert = #bd2c40
+alert = ${xrdb:color13}
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 20
+height = 30
 radius = 6.0
 fixed-center = false
 bottom = false
@@ -50,7 +50,7 @@ font-6 = Hack:pixelsize=9;1
 modules-left = i3
 modules-center = xwindow
 ;weather update installed
-modules-right = filesystem cpu memory wlan volume date powermenu
+modules-right = filesystem cpu memory wlan volume date battery
 
 tray-position = right
 tray-padding = 1
@@ -62,7 +62,7 @@ cursor-scroll = ns-resize
 
 [module/update]
 type = custom/script
-label-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.primary}
 
 interval = 30
 format = <label>
@@ -185,8 +185,8 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = ""
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+format-prefix-foreground = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label = %percentage:2%%
 
@@ -194,8 +194,8 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = ""
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+format-prefix-foreground = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label = %percentage_used:2%%
 
@@ -205,11 +205,11 @@ interface = wlp2s0
 interval = 3
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.primary}
+;format-connected-underline = ${colors.primary}
 label-connected = %essid%
 
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-prefix-foreground = ${colors.primary}
 
 [module/date]
 type = internal/date
@@ -219,8 +219,8 @@ date = %I:%M %p
 date-alt = %Y-%m-%d %I:%M %p
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+format-prefix-foreground = ${colors.primary}
+;format-underline = ${colors.primary}
 
 
 [module/volume]
@@ -231,13 +231,13 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-underline = ${colors.primary}
+;format-volume-underline = ${colors.primary}
 
-ramp-volume-foreground = ${colors.foreground}
+ramp-volume-foreground = ${colors.primary}
 
 label-muted = " muted"
 label-muted-foreground = ${colors.foreground-alt}
-label-muted-underline = ${colors.primary}
+;label-muted-underline = ${colors.primary}
 
 
 mapping = false
@@ -283,13 +283,102 @@ interval = 25
 mount-0 = /
 
 format-mounted-prefix = 
-format-mounted-prefix-foreground = ${colors.foreground-alt}
-format-mounted-underline = ${colors.primary}
+format-mounted-prefix-foreground = ${colors.primary}
+;format-mounted-underline = ${colors.primary}
 label-mounted = %percentage_used%%
 #label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/battery]
+type = internal/battery
 
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging =  %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
 
 ; vim:ft=dosini

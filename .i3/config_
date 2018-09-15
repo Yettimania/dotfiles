@@ -85,10 +85,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -360,7 +360,7 @@ set_from_resource $term_color15    color15
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #44bb48 #FFFFFF #FDF6E3
+  client.focused          #term_background $term_color4 #FFFFFF #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #FFFFFF #454948
   client.unfocused        #2F3D44 #2F3D44 #FFFFFF #454948
   client.urgent           #CB4B16 #FDF6E3 #FFFFFF #268BD2
