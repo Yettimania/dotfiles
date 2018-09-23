@@ -389,6 +389,6 @@ animation-discharging-framerate = 500
 type = custom/script
 exec = cat /sys/class/power_supply/BAT0/capacity
 interval = 5
-format-prefix = """
+format-prefix = 
 format-prefix-foreground = ${colors.primary}
 label = %output%%
