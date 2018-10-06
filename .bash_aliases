@@ -1,3 +1,4 @@
 alias cdd='cd ~/Downloads'
 alias cdb='cd ~/bin'
-
+alias cdpython='cd ~/Programming/PythonCode'
+alias p='sudo pacman'
