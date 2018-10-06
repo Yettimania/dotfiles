@@ -38,6 +38,9 @@ bindsym $mod+d exec rofi -show run
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+#launch flamteshot
+bindsym $mod+s exec flameshot gui
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
