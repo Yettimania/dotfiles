@@ -17,6 +17,7 @@ x-scheme-handler/mailto=userapp-Thunderbird.desktop
 message/rfc822=userapp-Thunderbird.desktop
 application/pdf=epdfview.desktop
 application/x-bittorrent=transmission-gtk.desktop
+audio/x-opus+ogg=cmus.desktop
 video/3gpp=mpv.desktop
 video/dv=mpv.desktop
 video/fli=mpv.desktop
@@ -78,7 +79,6 @@ application/x-extension-xht=userapp-chromium.desktop;
 image/jpeg=viewnior.desktop;gpicview.desktop;
 image/png=viewnior.desktop;gpicview.desktop;
 text/plain=mousepad.desktop;
-x-scheme-handler/mailto=userapp-Thunderbird.desktop;
 message/rfc822=userapp-Thunderbird.desktop;
 application/pdf=epdfview.desktop;
 application/x-bittorrent=transmission-gtk.desktop;
@@ -89,4 +89,5 @@ text/markdown=markdown_previewer.desktop;
 text/csv=mousepad.desktop;
 application/x-ipynb+json=mousepad.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=xarchiver.desktop;
+
 
