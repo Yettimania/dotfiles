@@ -50,7 +50,7 @@ font-6 = Hack:pixelsize=9;1
 modules-left = i3
 modules-center = xwindow
 ;weather update installed
-modules-right = filesystem cpu memory wlan volume date userbattery
+modules-right = filesystem wlan volume date userbattery
 
 tray-position = right
 tray-padding = 1
