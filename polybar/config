@@ -10,12 +10,16 @@
 [colors]
 ;background = #333
 background = ${xrdb:color0}
-background-alt = ${xrdb:color7}
+background-alt = ${xrdb:color0}
 foreground = ${xrdb:color15}
 foreground-alt = #AAA
-primary = ${xrdb:color12}
+primary = ${xrdb:color11}
 secondary = #FEE153
-alert = ${xrdb:color13}
+alert = ${xrdb:color9}
+tray1 = ${xrdb:color9}
+tray2 = ${xrdb:color10}
+tray3 = ${xrdb:color12}
+tray4 = ${xrdb:color14}
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -209,7 +213,7 @@ format-connected = <label-connected>
 label-connected = %essid%
 
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.primary}
+format-connected-prefix-foreground = ${colors.tray2}
 
 [module/date]
 type = internal/date
@@ -219,7 +223,7 @@ date = %I:%M %p
 date-alt = %Y-%m-%d %I:%M %p
 
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.tray3}
 ;format-underline = ${colors.primary}
 
 
@@ -233,7 +237,7 @@ ramp-volume-2 = 
 format-volume = <ramp-volume> <label-volume>
 ;format-volume-underline = ${colors.primary}
 
-ramp-volume-foreground = ${colors.primary}
+ramp-volume-foreground = ${colors.tray1}
 
 label-muted = " muted"
 label-muted-foreground = ${colors.foreground-alt}
@@ -390,5 +394,5 @@ type = custom/script
 exec = cat /sys/class/power_supply/BAT0/capacity
 interval = 5
 format-prefix = 
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.tray4}
 label = %output%%

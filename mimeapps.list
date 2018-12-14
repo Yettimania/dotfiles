@@ -89,3 +89,4 @@ text/markdown=mousepad.desktop;geany.desktop;markdown_previewer.desktop;
 text/csv=mousepad.desktop;
 application/x-ipynb+json=mousepad.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=xarchiver.desktop;
+image/svg+xml=viewnior.desktop;
