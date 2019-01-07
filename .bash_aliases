@@ -1,6 +1,7 @@
 #Directory aliases
 alias cdd='cd ~/Downloads'
 alias cdb='cd ~/bin'
+alias cdh='cd ~/'
 alias cdpython='cd ~/Programming/PythonCode'
 
 #Command aliases
