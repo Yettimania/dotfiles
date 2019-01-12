@@ -42,42 +42,42 @@ cursor_shape = underline
 [colors]
 
 # special
-foreground      = #ababab
-foreground_bold = #ababab
-cursor          = #ababab
-background      = #000000
+foreground      = ${xrdb:foreground}
+foreground_bold = ${xrdb:foreground}
+cursor          = ${xrdb:cursorColor}
+background      = ${xrdb:background}
 
 # black
-color0  = #000000
-color8  = #343434
+color0  = ${xrdb:color0}
+color8  = ${xrdb:color8}
 
 # red
-color1  = #e92f2f
-color9  = #e92f2f
+color1  = ${xrdb:color1}
+color9  = ${xrdb:color9}
 
 # green
-color2  = #0ed839
-color10 = #0ed839
+color2  = ${xrdb:color22} 
+color10 = ${xrdb:color10} 
 
 # yellow
-color3  = #dddd13
-color11 = #dddd13
+color3  = ${xrdb:color3}
+color11 = ${xrdb:color11}
 
 # blue
-color4  = #3b48e3
-color12 = #3b48e3
+color4  = ${xrdb:color4}
+color12 = ${xrdb:color12}
 
 # magenta
-color5  = #f996e2
-color13 = #f996e2
+color5  = ${xrdb:color5}
+color13 = ${xrdb:color13}
 
 # cyan
-color6  = #23edda
-color14 = #23edda
+color6  = ${xrdb:color6} 
+color14 = ${xrdb:color14}
 
 # white
-color7  = #ababab
-color15 = #f9f9f9
+color7  = ${xrdb:color7} 
+color15 = ${xrdb:color15}
 
 
 [hints]

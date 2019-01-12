@@ -428,7 +428,8 @@ mode "$mode_gaps_outer" {
 }
 
 #Additional user items
-exec_always feh --bg-fill /home/kyle/Pictures/wallpaper.jpg
+exec_always feh --bg-fill ~/.config/wall.png
+exec_always wal -R 
 exec_always ~/.config/polybar/launch.sh
 
 exec --no-startup-id xrandr --output DP-1 --right of LVDS-1
