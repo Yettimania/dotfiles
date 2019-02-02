@@ -4,9 +4,11 @@ do
 	fullpath="$(pwd)/$file"
         case "$1" in
         "w")
-                cp "$file" ~/.config/wall.png &&
+        cp "$file" ~/.config/wall.png &&
 		feh --bg-scale "$HOME/.config/wall.png"
-		notify-send -i "$HOME/.config/wall.png" "Wallpaper changed." ;;
+		notify-send -i "$HOME/.config/wall.png" "Wallpaper changed." 
+        wal -c
+        wal -i "$HOME/.config/wall.png";;
         "c")
 		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.bmdirs | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 		[ -z "$destdir" ] && exit

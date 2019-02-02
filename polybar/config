@@ -222,7 +222,8 @@ format-connected-prefix-foreground = ${colors.tray2}
 type = internal/date
 interval = 5
 
-date = %I:%M %p
+date = %H:%M
+;date = %I:%M %p
 date-alt = %Y-%m-%d %I:%M %p
 
 format-prefix = " "
