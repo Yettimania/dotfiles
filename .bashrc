@@ -43,5 +43,4 @@ alias yta="yt -x -f bestaudio/best" # Download only audio
 alias YT="youtube-viewer"
 
 # Functions
-#Example
-#vf() { fzf | xargs -r -I % $EDITOR % ;}
+fzx() { fzf | xclip -i -sel clip ;}

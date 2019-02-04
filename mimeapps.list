@@ -90,3 +90,4 @@ text/csv=mousepad.desktop;
 application/x-ipynb+json=mousepad.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=xarchiver.desktop;
 image/svg+xml=viewnior.desktop;
+application/javascript=firefox.desktop;qv4l2.desktop;vim.desktop;

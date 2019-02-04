@@ -1,6 +1,7 @@
 #!/bin/bash
 #PATH export includes all subdirectories as well
 export PATH="$PATH:$(du "$HOME/bin/" | cut -f2 | tr '\n' ':')"
+export PYTHONPATH="{PYTHONPATH}:/home/kyle/Code/Python/"
 export EDITOR="vim"
 export TERMINAL="termite"
 export BROWSER="firefox"

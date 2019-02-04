@@ -33,7 +33,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec dmenu_run -i -b -p 'Launch' -fn 'Inconsolata:regular:pixelsize=16' -nb "#283339" -nf "#d2d2d2" -sb "#396B83" -sf "#d2d2d2" 
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
