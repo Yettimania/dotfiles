@@ -33,6 +33,7 @@ alias g="git"
 alias mkd="mkdir -pv"
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
 alias x="sxiv -ft *"
+alias jn="jupyter notebook"
 
 # Adding color
 alias ls='ls -hN --color=auto --group-directories-first'
