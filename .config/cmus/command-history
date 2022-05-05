@@ -1,0 +1,16 @@
+q
+remove
+man cmus
+help
+//github.com/cmus/cmus/blob/master/Doc/cmus-tutorial.txtq
+bind common <key> pl-export
+save
+bind common <key> unmark
+bind common <key> load
+pl-create MikePosner
+pl-create
+hep
+man
+he1
+tutorial
+cmus-tutorial
