@@ -1,5 +1,5 @@
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+if [ -f ~/.config/zsh/.zshrc ]; then
+	. ~/.config/zsh/.zshrc
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
