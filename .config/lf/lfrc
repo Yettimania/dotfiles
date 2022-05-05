@@ -10,8 +10,6 @@ set hiddenfiles ".*"
 map <enter> shell
 map <delete> delete
 map o open
-map x $$f
-map X !$f
 
 # Commands
 
