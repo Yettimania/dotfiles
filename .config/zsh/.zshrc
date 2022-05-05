@@ -43,23 +43,6 @@ fpath+=~/.zfunc
 # AVR Serial
 alias avrSerial="screen /dev/ttyUSB0 9600"
 
-
-# NNN Configuration
-n()
-{
-    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
-    export NNN_BMS='d:~/Documents;u:~/Downloads;b:~/Documents/Business;c:~/Code;m:~/Dropbox/Apps/Blot'
-    export NNN_PLUG='t:imgview;v:vidthumb;d:_pdf2img $nnn;n:_normalize $nnn'
-
-    nnn "$@"
-
-    if [ -f $NNN_TMPFILE ]; then
-	. $NNN_TMPFILE
-	rm -f $NNN_TMPFILE > /dev/null
-    fi
-}
-
-
 # Specifc to zsh
 
 # Basic auto/tab complete:
@@ -109,10 +92,5 @@ bindkey '^e' edit-command-line
 # Load syntax highlighting; should be last
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# pyenv 
-export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
