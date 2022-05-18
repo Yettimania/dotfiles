@@ -166,4 +166,5 @@ map <C-s> :set spell spelllang=en_us<enter>
 map <C-n> :set nospell<enter>
 
 " fzf single key map
-map <;> :Files<CR>
+map <C-f> :Files<CR>
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
