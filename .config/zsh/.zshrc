@@ -24,8 +24,7 @@ alias cdd="~/Downloads"
 alias cdt="~/Templates"
 alias cdm="~/Music"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias scripts='/usr/bin/git
---git-dir=$HOME/.scripts/ --work-tree=$HOME'
+alias scripts="/usr/bin/git --git-dir=$HOME/.scripts/ --work-tree=$HOME"
 
 # Some aliases
 alias e="$EDITOR"

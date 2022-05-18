@@ -36,7 +36,13 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'alaviss/nim.nvim'
+Plug 'jpalardy/vim-slime'
 call plug#end()
+
+" slime settings
+let g:slime_target="tmux"
+let g:slime_paste_file="$HOME/.slime_paste"
+let g:slime_default_config={"socket_name": "default", "target_pane": "{last}"}
 
 " ncm2 settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
