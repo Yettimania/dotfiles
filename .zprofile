@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 if [ -f ~/.config/zsh/.zshrc ]; then
 	. ~/.config/zsh/.zshrc
 fi
@@ -20,5 +22,3 @@ export BROWSER="vivaldi-stable"
 export VIEWER="sxiv"
 export FILE="lf"
 export TOUCH_STATUS=1
-
-export GPG_TTY=$(tty)
