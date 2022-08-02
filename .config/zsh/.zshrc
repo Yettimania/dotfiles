@@ -1,11 +1,28 @@
 # Config file for ZSH
+export GPG_TTY=$(tty)
 
 # Enable colors and change prompt
 autoload -U colors && colors
-
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%} >>%b "
 setopt autocd # Automatically cd into typed directory
 stty stop undef # Disable ctrl-s to freeze terminal.
+
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == '' ]];
+  then
+    echo " "
+  else
+    echo ' ('$branch') '
+  fi
+}
+
+setopt prompt_subst
+
+PS1='%B% %{$fg[magenta]%}%~%{$fg[cyan]$(git_branch_name)%}%{$fg[yellow]%}>>%{$reset_color%}%b '
+
+# Include user@hostname
+#PS1='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[cyan]$(git_branch_name)%}%{$reset_color%}>>%b '
 
 # History cache directory
 HISTSIZE=10000
@@ -23,15 +40,17 @@ alias cdp="~/Pictures"
 alias cdd="~/Downloads"
 alias cdt="~/Templates"
 alias cdm="~/Music"
+alias cdnotes="~/Tresorit/notable/notes"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias scripts="/usr/bin/git --git-dir=$HOME/.scripts/ --work-tree=$HOME"
+alias jdev="~/.julia/dev"
 
 # Some aliases
 alias e="$EDITOR"
 alias ka="killall"
 alias jn="jupyter notebook"
-alias nv="nvim"
 alias vv="pyenv version"
+alias ls="ls --color=auto"
 
 # Internet
 alias yt="youtube-dl --add-metadata -i"
