@@ -5,6 +5,7 @@ set ifs "\n"
 set scrolloff 10
 set period 1
 set hiddenfiles ".*"
+set icons
 
 # Keybindings
 map <enter> shell
