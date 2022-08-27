@@ -13,7 +13,7 @@ export GOROOT="$HOME/sdk/go1.18"
 export PICO_SDK_PATH="$HOME/pico/pico-sdk"
 export LD_LIBRARY_PATH="/home/ksnyder/.pyenv/versions"
 
-export PATH=$PATH:$HOME/.local/bin/:$HOME/.pyenv/bin:$HOME/.poetry/bin:$HOME/sdk/julia-1.7.3/bin:${GOROOT}/bin
+export PATH=$PATH:$HOME/.local/bin/:$HOME/.pyenv/bin:$HOME/.poetry/bin:$HOME/sdk/julia-1.8.0/bin:${GOROOT}/bin:$HOME/.cargo/env
 export PYTHONPATH="{PYTHONPATH}:/home/ksnyder/Code/Python/"
 export EDITOR="nvim"
 export READER="zathura"

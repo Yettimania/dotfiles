@@ -13,13 +13,13 @@ function git_branch_name()
   then
     echo " "
   else
-    echo ' ('$branch') '
+    echo ' '$branch' '
   fi
 }
 
 setopt prompt_subst
 
-PS1='%B% %{$fg[magenta]%}%~%{$fg[cyan]$(git_branch_name)%}%{$fg[yellow]%}>>%{$reset_color%}%b '
+PS1='%B% %{$fg[magenta]%}%~%{$fg[green]$(git_branch_name)%}%{$fg[yellow]%}>>%{$reset_color%}%b '
 
 # Include user@hostname
 #PS1='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[cyan]$(git_branch_name)%}%{$reset_color%}>>%b '
@@ -34,7 +34,9 @@ alias sdn="sudo shutdown now"
 
 # Navigation
 alias cdb="~/.local/bin"
-alias cdc="~/Code"
+alias cdc="~/.config/"
+alias cdr="~/Code/Rust"
+alias cdj="~/Code/Julia"
 alias cddoc="~/Documents"
 alias cdp="~/Pictures"
 alias cdd="~/Downloads"
@@ -47,10 +49,14 @@ alias jdev="~/.julia/dev"
 
 # Some aliases
 alias e="$EDITOR"
+alias ev="e ~/.config/nvim/init.vim"
+alias ezrc="e ~/.config/zsh/.zshrc"
+alias ezp="e ~/.zprofile"
 alias ka="killall"
 alias jn="jupyter notebook"
 alias vv="pyenv version"
 alias ls="ls --color=auto"
+alias code="code-oss"
 
 # Internet
 alias yt="youtube-dl --add-metadata -i"
