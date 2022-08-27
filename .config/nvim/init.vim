@@ -20,13 +20,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf.vim'
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'davidhalter/jedi-vim'
-Plug 'HansPinckaers/ncm2-jedi'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
@@ -35,33 +29,19 @@ Plug 'preservim/tagbar'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'alaviss/nim.nvim'
 Plug 'jpalardy/vim-slime'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ryanolsonx/vim-xit'
+" Plug 'synaptiko/xit.nvim' 
+" Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 " slime settings
 let g:slime_target="tmux"
 let g:slime_paste_file="$HOME/.slime_paste"
+
 let g:slime_default_config={"socket_name": "default", "target_pane": "{last}"}
-
-" ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-set shortmess+=c
-
-"make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1,1]]
-let g:ncm2#matcher = 'substrfuzzy'
-
-" Disable Jedi-vim autocompletion and enable call-sg options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = 2
 
 " Tagbar Tobble
 nmap <F9> :TagbarToggle<CR>
@@ -72,13 +52,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
-" set background=dark
-" colorscheme koehler
-" colorscheme molokai
+" color shceme
 colorscheme gruvbox
-" colorscheme tokyonight
-" colorscheme farout
-
 
 " Set airline theme
 let g:airline_theme='gruvbox'
