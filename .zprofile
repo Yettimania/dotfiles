@@ -13,11 +13,11 @@ export GOROOT="$HOME/sdk/go1.18"
 export PICO_SDK_PATH="$HOME/pico/pico-sdk"
 export LD_LIBRARY_PATH="/home/ksnyder/.pyenv/versions"
 
-export PATH=$PATH:$HOME/.local/bin/:$HOME/.pyenv/bin:$HOME/.poetry/bin:$HOME/sdk/julia-1.8.0/bin:${GOROOT}/bin:$HOME/.cargo/env
+export PATH=$PATH:$HOME/.local/bin/:$HOME/.pyenv/bin:$HOME/.poetry/bin:$HOME/sdk/julia-1.8.0/bin:${GOROOT}/bin:$HOME/.cargo/env:$HOME/go/bin
 export PYTHONPATH="{PYTHONPATH}:/home/ksnyder/Code/Python/"
 export EDITOR="nvim"
 export READER="zathura"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export VIEWER="sxiv"
 export FILE="lf"
