@@ -46,6 +46,8 @@ alias cdnotes="~/Tresorit/notable/notes"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias scripts="/usr/bin/git --git-dir=$HOME/.scripts/ --work-tree=$HOME"
 alias jdev="~/.julia/dev"
+alias zj="zellij --layout julia-dev"
+alias zr="zellij --layout rust-dev"
 
 # Some aliases
 alias e="$EDITOR"
