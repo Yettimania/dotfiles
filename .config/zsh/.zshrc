@@ -42,12 +42,13 @@ alias cdp="~/Pictures"
 alias cdd="~/Downloads"
 alias cdt="~/Templates"
 alias cdm="~/Music"
-alias cdnotes="~/Tresorit/notable/notes"
+alias cdnotes="~/TresoritDrive/notable/notes"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias scripts="/usr/bin/git --git-dir=$HOME/.scripts/ --work-tree=$HOME"
 alias jdev="~/.julia/dev"
 alias zj="zellij --layout julia-dev"
 alias zr="zellij --layout rust-dev"
+alias nb="newsboat"
 
 # Some aliases
 alias e="$EDITOR"
@@ -59,6 +60,7 @@ alias jn="jupyter notebook"
 alias vv="pyenv version"
 alias ls="ls --color=auto"
 alias code="code-oss"
+alias conn="nmcli device wifi connect"
 
 # Internet
 alias yt="youtube-dl --add-metadata -i"
@@ -124,3 +126,5 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 # eval "$(pyenv virtualenv-init -)"
 
 eval "$(starship init zsh)"
+
+eval "$(direnv hook zsh)"
