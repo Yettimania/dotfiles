@@ -2,16 +2,16 @@ starship init fish | source
 
 set fish_vi_mode 1
 
-set -U GOPATH $HOME/go
-set -U GOROOT $HOME/sdk/go1.18
+set -gx GOPATH $HOME/go
+set -gx GOROOT $HOME/sdk/go1.18
 
-set -U PATH $HOME/.local/bin $HOME/.poetry/bin $HOME/.pyenv/bin $HOME/sdk/go1.18/bin $HOME/.cargo/env $HOME/go/bin $PATH
+set -gx PATH $HOME/.local/bin $HOME/.poetry/bin $HOME/.pyenv/bin $HOME/sdk/go1.18/bin $HOME/.cargo/bin $HOME/go/bin $PATH
 
-set -U GPG_TTY $(tty)
-set -U EDITOR vis
-set -U READER zathura
-set -U TERMINAL kitty
-set -U BROWSER firefox
-set -U VIEWER sxiv
-set -U FILE lf
-set -U TOUCH_STATUS 1
+set -gx GPG_TTY $(tty)
+set -gx EDITOR vis
+set -gx READER zathura
+set -gx TERMINAL kitty
+set -gx BROWSER firefox
+set -gx VIEWER sxiv
+set -gx FILE lf
+set -gx TOUCH_STATUS 1

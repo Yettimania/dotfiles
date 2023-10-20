@@ -1,0 +1,74 @@
+#!/bin/bash
+
+clock() {
+    date '+%H:%M'
+}
+
+tresor() {
+    STATUS=$(tresorit-cli status | grep 'Tresorit daemon' | awk '{print $3}')
+
+    if [ $STATUS = 'running' ]
+    then
+        echo up
+    else
+        echo down
+    fi
+}
+
+cpu() {
+    TOTAL=$(ps -eo pcpu |grep -vE '^\s*(0.0|%CPU)' |sed -n '1h;$!H;$g;s/\n/ +/gp' | bc)
+    echo $TOTAL
+}
+
+ram() {
+    free | grep Mem | awk '{printf "%.0f%\n", $3/$2 * 100.0}'
+}
+
+battery() {
+    BAT0=$(cat /sys/class/power_supply/BAT0/capacity)
+    BAT1=$(cat /sys/class/power_supply/BAT1/capacity)                             
+    STATUS=$(cat /sys/class/power_supply/BAT0/status)                             
+    BAT=$(((($BAT0+$BAT1)/2)))
+    echo $BAT%                  
+}
+
+network() {
+        read lo int1 int2 <<< `ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p'`
+    if iwconfig $int1 >/dev/null 2>&1; then
+        wifi=$int1
+        eth0=$int2
+    else
+        wifi=$int2
+        eth0=$int1
+    fi
+    ip link show $eth0 | grep 'state UP' >/dev/null && int=$eth0 ||int=$wifi
+
+    #int=eth0
+
+    ping -c 1 8.8.8.8 >/dev/null 2>&1 && 
+    echo "$int connected" || echo "$int disconnected"
+}
+
+workspace() {
+    DEFAULT=0
+    leftwm-state -w $DEFAULT -qn -t /home/ksnyder/.config/rice/template.liquid
+}
+
+
+# TODO
+# windows ()
+
+while :; do
+    buf=""
+    buf="${buf} %{l}$(workspace)"
+    buf="${buf} %{r}%{F#B57614}TRESOR%{F-}: $(tresor)"
+    buf="${buf} %{F#b57614}CPU%{F-}: $(cpu)%"
+    buf="${buf} %{F#b57614}MEM%{F-}: $(ram)"
+    buf="${buf} %{F#b57614}BAT%{F-}: $(battery)"
+    buf="${buf} %{F#b57614}NET%{F-}: $(network)"
+    buf="${buf} %{F#b57614}CLK%{F-}: $(clock)"
+    buf="${buf} "
+
+    echo $buf
+    sleep .05
+done

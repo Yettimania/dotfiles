@@ -5,8 +5,8 @@ SETUVAR EDITOR:vis
 SETUVAR FILE:lf
 SETUVAR --path GOPATH:/home/ksnyder/go
 SETUVAR GOROOT:/home/ksnyder/sdk/go1\x2e18
-SETUVAR GPG_TTY:/dev/pts/8
-SETUVAR --path PATH:/home/ksnyder/\x2elocal/bin\x1e/home/ksnyder/\x2epoetry/bin\x1e/home/ksnyder/\x2epyenv/bin\x1e/home/ksnyder/sdk/go1\x2e18/bin\x1e/home/ksnyder/\x2ecargo/env\x1e/home/ksnyder/go/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/sbin\x1e/sbin\x1e/bin\x1e/home/ksnyder/\x2elocal/bin/\x1e/home/ksnyder/\x2epyenv/bin\x1e/home/ksnyder/\x2epoetry/bin\x1e/home/ksnyder/sdk/julia\x2d1\x2e8\x2e0/bin\x1e/home/ksnyder/sdk/go1\x2e18/bin\x1e/home/ksnyder/\x2ecargo/env\x1e/home/ksnyder/go/bin\x1e/home/ksnyder/\x2econfig/emacs/bin
+SETUVAR GPG_TTY:/dev/pts/0
+SETUVAR --path PATH:/home/ksnyder/\x2elocal/bin\x1e/home/ksnyder/\x2epoetry/bin\x1e/home/ksnyder/\x2epyenv/bin\x1e/home/ksnyder/sdk/go1\x2e18/bin\x1e/home/ksnyder/\x2ecargo/bin\x1e/home/ksnyder/go/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/sbin\x1e/sbin\x1e/bin\x1e/home/ksnyder/\x2elocal/bin/\x1e/home/ksnyder/\x2epyenv/bin\x1e/home/ksnyder/\x2epoetry/bin\x1e/home/ksnyder/sdk/julia\x2d1\x2e8\x2e0/bin\x1e/home/ksnyder/sdk/go1\x2e18/bin\x1e/home/ksnyder/\x2ecargo/env\x1e/home/ksnyder/go/bin\x1e/home/ksnyder/\x2econfig/emacs/bin
 SETUVAR READER:zathura
 SETUVAR TERMINAL:kitty
 SETUVAR TOUCH_STATUS:1
